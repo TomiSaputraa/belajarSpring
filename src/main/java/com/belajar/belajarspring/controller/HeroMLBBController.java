@@ -2,9 +2,12 @@ package com.belajar.belajarspring.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +23,7 @@ public class HeroMLBBController {
     public List<Hero> heroes = new ArrayList<>();
     public int counter = 1;
 
+    // Read
     @GetMapping("/daftar-hero")
     public List<Hero> daftarHero() {
         // heroes.add(new Hero(1, "balmond", 100));
@@ -30,6 +34,7 @@ public class HeroMLBBController {
         return heroes;
     }
 
+    // Create
     @PostMapping(path = "tambah")
     public Hero tambahDataHero(@RequestBody Hero request) {
         request.setId(counter); // auto add id
@@ -37,5 +42,18 @@ public class HeroMLBBController {
         counter++; // auto add id
         return request;
 
+    }
+
+    // update
+    @PutMapping(path = "/ubah/{id}")
+    public Boolean updateData(@RequestBody Hero request, @PathVariable Integer id) {
+        final Optional<Hero> result = heroes.stream().filter(hero -> hero.getId() == id).findFirst();
+        if (result.isPresent()) {
+            result.get().setName(request.getName());
+            result.get().setDamage(request.getDamage());
+            return true;
+        } else {
+            return false;
+        }
     }
 }

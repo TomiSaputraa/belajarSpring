@@ -13,6 +13,8 @@ import com.model.Hero;
 @RequestMapping("/hero")
 public class HeroMLBBController {
 
+    // menjadikan data model Hero menjadi list
+    // lalu di tambahkan data listnya dalam function daftarHero
     public List<Hero> heroes = new ArrayList<>();
 
     @GetMapping("/daftar-hero")

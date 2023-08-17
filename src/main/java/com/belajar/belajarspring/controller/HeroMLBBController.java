@@ -27,6 +27,7 @@ public class HeroMLBBController {
     // Read
     @GetMapping("/daftar-hero")
     public List<Hero> daftarHero() {
+        // menambah data secara manual
         // heroes.add(new Hero(1, "balmond", 100));
         // heroes.add(new Hero(2, "miya", 200));
         // heroes.add(new Hero(3, "hanzo", 500));

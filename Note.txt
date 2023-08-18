@@ -1,10 +1,8 @@
-package com.model;
+1. lombok
+lombok digunakan sebagai definisi class java seperti getter,setter,constructor dll
+sehingga kita tidak perlu menulis getter setter dan constructor yang terlalu panjang
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+contoh :
 // dibawah ini adalah contoh getter setter dengan lombok
 @Getter
 @Setter
@@ -13,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor // ini adalah cunstructor tanpa parameter
 
 public class Hero {
-
     // id sebagai uniqe identifier
     private int id;
     private String name;

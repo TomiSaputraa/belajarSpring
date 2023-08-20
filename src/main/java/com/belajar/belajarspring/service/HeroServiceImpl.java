@@ -11,6 +11,7 @@ import com.belajar.belajarspring.model.Hero;
 // Service digunakan sebagai penanda bahwa ini adalah class service
 // Service ini di gunakan juga untuk depedency injection/DI
 @Service
+// Untuk menggunakan autowire @Service harus sudah terpasang
 public class HeroServiceImpl implements HeroService {
 
     public List<Hero> heroes = new ArrayList<>();

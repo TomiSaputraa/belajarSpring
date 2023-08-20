@@ -20,3 +20,7 @@ public class Hero {
 
 2.Interface dan Service
 Interface : blue print dari class. Isi method-nya kosong dan nanti akan diimplementasikan pada class lain.
+
+3. Swagger
+Swagger : dashboard / interface dari api yang kita buat. seperti postman tapi memang di aplikasi kita 
+biasanya endpoint nya ada di : http://localhost:7080/swagger-ui/index.html
